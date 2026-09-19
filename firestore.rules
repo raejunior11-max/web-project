@@ -1,0 +1,46 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /signups/{signupId} {
+      allow create: if request.resource.data.keys().hasOnly([
+        'email',
+        'createdAt'
+      ])
+      && request.resource.data.email is string
+      && request.resource.data.email.size() >= 5
+      && request.resource.data.email.size() <= 254
+      && request.resource.data.email.matches('^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$')
+      && request.resource.data.createdAt is timestamp;
+
+      allow read: if request.auth != null && request.auth.token.admin == true;
+      allow update, delete: if false;
+    }
+
+    match /orders/{orderId} {
+      allow create: if request.resource.data.keys().hasOnly([
+        'email',
+        'animalType',
+        'species',
+        'quantity',
+        'notes',
+        'createdAt'
+      ])
+      && request.resource.data.email is string
+      && request.resource.data.email.size() >= 5
+      && request.resource.data.email.size() <= 254
+      && request.resource.data.email.matches('^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$')
+      && request.resource.data.animalType is string
+      && request.resource.data.species is string
+      && request.resource.data.quantity is int
+      && request.resource.data.quantity >= 1
+      && request.resource.data.quantity <= 4
+      && request.resource.data.notes is string
+      && request.resource.data.notes.size() <= 2000
+      && request.resource.data.createdAt is timestamp;
+
+      allow read: if request.auth != null && request.auth.token.admin == true;
+      allow update, delete: if false;
+    }
+  }
+}

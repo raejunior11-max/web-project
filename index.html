@@ -3,43 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova | Web Project</title>
+    <meta name="description" content="Nova is a curious field guide to remarkable animals, rare traits, and the wild stories behind them.">
+    <meta name="theme-color" content="#1f3828">
+    <meta property="og:title" content="Nova | The animal field guide">
+    <meta property="og:description" content="Discover remarkable animals, rare traits, and surprising wild stories.">
+    <meta property="og:type" content="website">
+    <title>Nova | The animal field guide</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">NOVA</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#docs">Docs</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="Nova home"><span class="brand-mark">N</span><span>NOVA</span></a>
+        <nav class="main-nav" aria-label="Main navigation"><a class="active" href="#explore">Explore</a><a href="#buy">Find an animal</a><a href="#about">About Nova</a></nav>
+        <div class="header-tools">
+            <a class="header-action" href="https://wa.me/2348136589631?text=Hello%20Nova%2C%20I%20would%20like%20to%20learn%20more%20about%20animals." target="_blank" rel="noopener">Chat on WhatsApp <span aria-hidden="true">↗</span></a>
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme"><span aria-hidden="true">☾</span></button>
+        </div>
+    </header>
 
-    <main>
-    <section class="hero" id="home">
-        <h1>Building the next generation<br>of web experiences</h1>
-        <p>Modern web project currently in active development.</p>
-        <a class="button" href="#features">View Progress</a>
-    </section>
-
-    <section class="details" id="features">
-        <h2>What is taking shape</h2>
-        <p>A focused foundation for thoughtful, fast, and accessible web experiences.</p>
-    </section>
-
-    <section class="details" id="docs">
-        <h2>Documentation</h2>
-        <p>Project notes and usage guidance will live here as the work develops.</p>
-    </section>
-
-    <section class="details" id="contact">
-        <h2>Stay connected</h2>
-        <p>More ways to get in touch will be added soon.</p>
-    </section>
+    <main id="top">
+        <section class="wonder-section" aria-labelledby="wonder-title"><div class="wonder-heading"><p class="eyebrow"><span class="eyebrow-dot"></span> Wild wonder</p><h2 id="wonder-title">One astonishing<br><em>thing to know.</em></h2><p>Every animal has a secret worth slowing down for.</p></div><article class="wonder-card" id="wonder-card" aria-live="polite"><div class="wonder-image-wrap"><img id="wonder-image" src="" alt=""></div><div class="wonder-copy"><p class="card-label" id="wonder-label">Rare behavior</p><h3 id="wonder-animal">Loading a wonder...</h3><p class="wonder-fact" id="wonder-fact"></p><p class="wonder-detail" id="wonder-detail"></p><button class="wonder-next" id="wonder-next" type="button">Another wonder <span aria-hidden="true">↗</span></button></div></article></section>
+        <section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="eyebrow-dot"></span> A field guide for the curious</p><h1>Every animal<br>has a <em>story.</em></h1><p class="hero-text">Meet the remarkable creatures, breeds, and rare wonders that make our planet feel wonderfully alive.</p><label class="hero-search"><span aria-hidden="true">⌕</span><input id="hero-search" type="search" placeholder="Search animals, breeds, or habitats" aria-label="Search animals, breeds, or habitats"><kbd>/</kbd></label><a class="button button-dark" href="#explore">Discover an animal <span aria-hidden="true">↓</span></a></div><div class="hero-art" aria-label="Illustration of a curious red fox" role="img"><div class="sun-disc"></div><div class="hero-label label-top">01 / Wild at heart</div><div class="fox-illustration"><span class="fox-ear left"></span><span class="fox-ear right"></span><span class="fox-face"></span><span class="fox-muzzle"></span><span class="fox-eye left"></span><span class="fox-eye right"></span><span class="fox-nose"></span><span class="fox-tail"></span></div><div class="hero-label label-bottom">Vulpes vulpes <span>Red fox</span></div></div></section>
+        <section class="impact-strip" aria-label="Nova impact statistics"><div><strong>500M<span>+</span></strong><p>animal stories to discover</p></div><div><strong>7</strong><p>habitats, one living planet</p></div><div><strong>∞</strong><p>reasons to stay curious</p></div></section>
+        <section class="explore-section" id="explore"><div class="section-heading"><div><p class="eyebrow">The Nova index</p><h2>Find your next <em>favourite.</em></h2></div><p class="section-note">From loyal companions to untamed icons, explore the traits that make each animal unforgettable.</p></div><div class="explore-tools"><div class="filter-list" role="group" aria-label="Filter animals by category"><button class="filter-button active" data-filter="all">All creatures</button><button class="filter-button" data-filter="dogs">Dogs</button><button class="filter-button" data-filter="farm">Farm life</button><button class="filter-button" data-filter="wild">Wild animals</button><button class="filter-button" data-filter="horses">Horses</button></div><div class="select-list"><label>Type<select id="category-select" aria-label="Filter by animal type"><option value="all">All types</option><option value="dogs">Dogs</option><option value="cats">Cats</option><option value="farm">Farm animals</option><option value="horses">Horses</option><option value="birds">Birds</option><option value="wild">Wild animals</option><option value="ocean">Ocean life</option><option value="insects">Insects</option><option value="reptiles">Reptiles</option></select></label><label>Habitat<select id="habitat-select" aria-label="Filter by habitat"><option value="all">All habitats</option><option value="home">Home & garden</option><option value="farm">Farm & pasture</option><option value="forest">Forest</option><option value="savanna">Savanna</option><option value="ocean">Ocean & rivers</option><option value="mountains">Mountains</option><option value="desert">Desert</option></select></label></div><label class="search-box"><span aria-hidden="true">⌕</span><input id="animal-search" type="search" placeholder="Search an animal..." aria-label="Search animals"></label></div><div class="animal-grid" id="animal-grid"></div><p class="empty-state" id="empty-state" hidden>No animals found. Try another name or category.</p></section>
+        <section class="collection-section" id="collections"><div class="collection-image"><div class="collection-badge">Nova<br>journal</div></div><div class="collection-copy"><p class="eyebrow">A little more wonder</p><h2>Small details.<br><em>Big personalities.</em></h2><p>Nova collects the details that turn a name into a feeling: the way a horse reads a room, why a cattle breed stays calm, or how a snow leopard disappears into a mountain.</p><a class="text-link" href="#explore">Browse the field notes <span>↗</span></a></div></section>
+        <section class="buy-section" id="buy"><div class="buy-intro"><p class="eyebrow">Your next companion</p><h2>Looking for an<br><em>animal to love?</em></h2><p>Tell us what kind of animal has your heart. Nova will keep your interest safe while we prepare trusted, responsible ways to connect people with animals.</p></div><form class="interest-form" id="interest-form"><label for="animal-type">I am interested in a <span>*</span><select id="animal-type" required><option value="">Choose an animal type</option><option value="dog">Dog</option><option value="cat">Cat</option><option value="horse">Horse</option><option value="farm">Farm animal</option><option value="bird">Bird</option><option value="wild">Wild animal</option></select></label><label for="animal-species" id="species-label" hidden>Specie or breed <span>*</span><select id="animal-species" required><option value="">Choose a type first</option></select></label><label for="interest-email" id="email-label" hidden>Your email address <span>*</span><input id="interest-email" type="email" placeholder="you@example.com" required></label><label for="interest-quantity">Quantity<select id="interest-quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></label><label for="interest-notes">Order note<textarea id="interest-notes" rows="3" placeholder="Tell us anything important about the animal you want."></textarea></label><button class="button button-dark" id="interest-submit" type="submit" disabled>Request an update <span>→</span></button><p class="form-message" id="form-message" role="status"></p></form></section>
+        <section class="about-section" id="about"><p class="eyebrow">The heart behind Nova</p><h2>Made with love.<br><em>For every kind.</em></h2><p>Nova was founded by Israel Ujah, a Nigerian pet lover with a soft spot for every paw, wing, hoof, and wild spirit. What began as a simple curiosity grew into a heartfelt vision: to help people slow down, look closer, and discover the rare qualities that make every animal wonderfully unique.</p><p>From the loyal warmth of a family dog to the quiet intelligence of a wild animal, Israel believes that every creature has something beautiful to teach us. Nova is his little corner of the world for sharing those stories, celebrating our fellow animals, and inspiring more kindness toward all living things.</p></section>
     </main>
+    <footer><a class="brand" href="#top"><span class="brand-mark">N</span><span>NOVA</span></a><p>For the endlessly curious.</p><a class="footer-email" href="mailto:info@novafieldguide.co">info@novafieldguide.co</a><span>© 2026 Nova Field Guide</span></footer>
+    <dialog class="animal-modal" id="animal-modal"><button class="modal-close" id="modal-close" aria-label="Close animal details">×</button><div id="modal-content"></div></dialog>
 
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

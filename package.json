@@ -1,12 +1,14 @@
 {
   "name": "web-project",
   "version": "1.0.0",
-  "description": "Personal web project in development",
+  "private": true,
+  "description": "Nova animal field guide static website",
   "main": "index.html",
   "scripts": {
-    "start": "echo Open index.html or use Live Server"
+    "start": "npx serve . -l 3000",
+    "dev": "npx serve . -l 3000"
   },
-  "keywords": ["web", "frontend", "project"],
+  "keywords": ["web", "frontend", "static-site", "project"],
   "author": "You",
   "license": "MIT"
 }
